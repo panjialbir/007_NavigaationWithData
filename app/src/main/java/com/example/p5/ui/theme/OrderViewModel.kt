@@ -11,7 +11,7 @@ import java.text.NumberFormat
 
 private const val HARGA_PER_CUP = 3000
 
-class OrderViewModel {
+class OrderViewModel : ViewModel(){
     private val _stateUI = MutableStateFlow(OrderUiState())
     val stateUI: StateFlow<OrderUiState> = _stateUI.asStateFlow()
 
@@ -36,7 +36,7 @@ class OrderViewModel {
         _stateUI.value = OrderUiState()
     }
 
-    fun hitungHarga(jumlah: Int = _stateUI.value.jumlah): String {
+    private fun hitungHarga(jumlah: Int = _stateUI.value.jumlah): String {
         val kalkulasiHarga = jumlah * HARGA_PER_CUP
 
         return NumberFormat.getNumberInstance().format(kalkulasiHarga)

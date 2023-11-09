@@ -2,7 +2,8 @@ package com.example.p5.ui.theme
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.RowScopeInstance.weight
+import androidx.compose.foundation.layout.Row
+
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -17,13 +18,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import com.example.p5.Komponen.FormatLabelHarga
 import com.example.p5.R
 import com.example.p5.data.OrderUiState
 
 @Composable
-fun HalamanDua(
+fun SecondPage(
     orderUiState: OrderUiState,
-    onCancelButtonClicked: (),
+    onCancelButtonClicked: ()-> Unit,
     modifier: Modifier = Modifier
 ){
     val items = listOf(
@@ -54,7 +56,7 @@ fun HalamanDua(
         }
         Row(
             modifier = Modifier
-                .weight(if, false)
+                .weight(1f, false)
                 .padding(dimensionResource(R.dimen.padding_medium))
         ){
             Column(verticalArrangement =Arrangement.spacedBy(dimensionResource(R.dimen.padding_small))
@@ -65,7 +67,7 @@ fun HalamanDua(
                     Text(stringResource(R.string.send))
                 }
                 OutlinedButton(modifier = Modifier.fillMaxWidth(),
-                    onCLICK = onCancelButtonClicked
+                    onClick = onCancelButtonClicked
                 ){
                     Text(stringResource(R.string.cancel))
                 }

@@ -53,14 +53,13 @@ fun HomePage(onNextButtonClicked: () -> Unit)
                 Image(painter =image , contentDescription = null, contentScale = ContentScale.Crop)
                 Text(text = "Sri Kurma",
                     color = Color.DarkGray,
-                    fontFamily = FontFamily.Cursive,
+
                     fontSize = 35.sp,
                     modifier =  Modifier
                         .align(Alignment.CenterHorizontally))
                 Text(text = "Kasihan",
                     color = Color.DarkGray,
-                    fontFamily = FontFamily.Cursive,
-                    fontStyle = FontStyle.Italic,
+
                     fontSize = 60.sp,
                     fontWeight = FontWeight.Bold
                 )
@@ -79,4 +78,4 @@ fun HomePage(onNextButtonClicked: () -> Unit)
             }
         }
     }
-}}
+}
